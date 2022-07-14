@@ -1,0 +1,21 @@
+pipeline {
+    agent any 
+    stages {
+        stage('Build') { 
+            steps {
+                echo "Build Success" 
+                git branch: 'main', credentialsId: '9b5f1658-5648-4e53-ad5d-7c69e301dbb4', url: 'https://github.com/shashanksb03/Facebook.git'
+            }
+        }
+        stage('Test') { 
+            steps {
+                echo "Test Success" 
+            }
+        }
+        stage('Deploy') { 
+            steps {
+                echo "Deploy Success" 
+            }
+        }
+    }
+}
